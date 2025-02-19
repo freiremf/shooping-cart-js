@@ -1,4 +1,4 @@
-let totalGeral = 0;
+let totalGeral;
 limpar();
 
 function adicionar() {
@@ -13,12 +13,6 @@ function adicionar() {
     }
 
     let subtotalProduto = quantidade * precoProduto
-
-    console.log(`Nome do Produto: ${nomeProduto}`);
-    console.log(`Preço do Produto: ${precoProduto}`);
-    console.log(`Quantidade: ${quantidade}`);
-    console.log(`Subtotal: ${subtotalProduto}`);
-
     let carrinho = document.getElementById('lista-produtos');
     let item = document.createElement('section');                    
     item.classList.add('carrinho__produtos__produto');
@@ -35,6 +29,7 @@ function adicionar() {
 }
 
 function limpar() {
+    totalGeral = 0;
     document.getElementById('lista-produtos').innerHTML = '';
     document.getElementById('valor-total').textContent = 'R$ 0';
 }
