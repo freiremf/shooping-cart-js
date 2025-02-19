@@ -7,7 +7,12 @@ function adicionar() {
     let precoProduto = produto.split('R$')[1];
     let quantidade = document.getElementById('quantidade').value;
 
-    if(quantidade == '' || quantidade == 0) {
+    if(!produto || produto.trim() === '') {
+        alert('Selecione um produto');
+        return;
+    }
+
+    if(isNaN(quantidade) || quantidade <= 0) {
         alert('Informe a quantidade do produto');
         return;
     }
